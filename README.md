@@ -1,3 +1,4 @@
+
 # Speaker identification 
 
 
@@ -8,8 +9,7 @@
 
 
 
-*   
-RedCarpetUp lends to customers in India to finance their online purchases 
+*   RedCarpetUp lends to customers in India to finance their online purchases 
 
 
 *   They need a caller identification system to identify if the caller is the same person he claims he is
@@ -18,8 +18,7 @@ RedCarpetUp lends to customers in India to finance their online purchases
 # Project
 
 
-### 
-    The product is a caller identification system that will be integrated into the internal caller system of RedCarpetUp 
+  The product is a caller identification system that will be integrated into the internal caller system of RedCarpetUp 
 
 
 # Model
@@ -45,4 +44,3 @@ RedCarpetUp lends to customers in India to finance their online purchases
 # Setup and installation instructions
 
 TBD
-
