@@ -1,0 +1,26 @@
+[Signal Processing]
+sr = 8000
+nfft = 512
+window = 0.025
+hop = 0.01
+tisv_frame = 180
+dialing_tone_thresh = 400
+mel_nof = 40
+
+[Model Parameters]
+hidden = 128
+proj = 64
+num_layer = 3
+model_path = ./LSTM speaker identification module/tisv_model_per_speaker
+model_num = 0
+
+[Testing Parameters]
+diarization_test_path = ../data/diarization
+calls_to_compare_path = ../data/calls_to_compare
+
+[Embeddings Database]
+embeddings_db_path = ./embeddings_db
+embeddings_from_calls = 0
+utterance_path = ../data/utterances_for_db_creation
+calls_path = ../data/original_audio
+
