@@ -17,8 +17,7 @@ The goal of the project is identifying fraud in the company's call center using 
 # Repository Overview
 
 The code in this repository is divided into modules, each responsible for a different part of the pipeline as can be seen in the following pipeline sketch:
-![System Pipeline](https://bitbucket.org/redcarpetup/speaker/src/master/images/pipeline.jpg)
-<<< PIPELINE >>>
+![System Pipeline](https://github.com/ninashp/Speaker-Identification/blob/master/images/pipeline.jpg)
 
 **config** folder contains default configuration
 
