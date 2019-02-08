@@ -26,16 +26,7 @@ def unitest_create_embeddings():
 def unitest_signal_processing__call_type():
     # ground truth labels for call types
     call_types_ground_truth = {
-        "f8018973-ddda-4f0a-9954-e8ceed4c0154.wav" : SignalProcessing.FIRST_SPEAKER_REPRESENTATIVE,
-        "f48a95e0-e000-40aa-aec0-6d11ef07edd3.wav" : SignalProcessing.FIRST_SPEAKER_REPRESENTATIVE,
-        "bf9f10ec-c868-482c-8199-9e412aa4237a.wav" : SignalProcessing.FIRST_SPEAKER_REPRESENTATIVE,
-        "980158b4-0e2d-4309-9208-38c5e293fe19.wav" : SignalProcessing.FIRST_SPEAKER_REPRESENTATIVE,
-        "22bcbfea-dde1-4df1-841a-a1d2840633d7_0_1_r.wav" : SignalProcessing.FIRST_SPEAKER_CUSTOMER,
-        "10e3ed40-8f1f-4a0f-a8f8-1dcaa2954ef1.wav" : SignalProcessing.FIRST_SPEAKER_REPRESENTATIVE,
-        "3d1ab4ad-0788-4514-b039-47582a4e27b0.wav" : SignalProcessing.FIRST_SPEAKER_REPRESENTATIVE,
-        "d6088637-61c3-4d4a-92ec-27fa557368e3.wav" : SignalProcessing.FIRST_SPEAKER_REPRESENTATIVE,
-        "f7b818f0-c61c-4bac-bd46-ec897bf37652.wav" : SignalProcessing.FIRST_SPEAKER_REPRESENTATIVE,
-        "d8b9f4ed-d06d-4f1b-84c8-5d24d3d7e671.wav" : SignalProcessing.FIRST_SPEAKER_REPRESENTATIVE,
+        # confidential data 
     }
 
     success_count = 0
@@ -322,10 +313,11 @@ if __name__ == "__main__":
         print("**** unitest_create_embeddings FAILED!!!")
     else:
         print("**** unitest_create_embeddings PASSED!!!")
-    if unitest_signal_processing__call_type() != 1:
-        print("**** unitest_signal_processing__call_type FAILED!!!")
-    else:
-        print("**** unitest_signal_processing__call_type PASSED") 
+    # This test cannot run as it contains confidential data 
+    #if unitest_signal_processing__call_type() != 1:
+    #    print("**** unitest_signal_processing__call_type FAILED!!!")
+    #else:
+    #    print("**** unitest_signal_processing__call_type PASSED") 
     if unitest_two_person_diarization_split() > 0.9:
         print("**** unitest_two_person_diarization_split FAILED!!!")
     else:
