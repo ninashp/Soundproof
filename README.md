@@ -1,16 +1,13 @@
+
 # SOUNDPROOF 
 
 
-### Consulting project for RedCarpetUp.com done as Insight Fellowship Project
+### Consulting project for RedCarpetUp.com done as part of Artificial Intelligence Insight Fellowship
 
 
-# Motivation
+# Background
 
-In India, credit and finance companies are able to service less than 3% of the customer base because there are no widespread credit bureaus to profile and score customers. 
-
-RedCarpet lands to customers to finance their online purchases.
-
-As they have access to private and vulnerable data, they must protect their customers information. 
+In India, credit and finance companies are able to service less than 3% of the customer base because there are no widespread credit bureaus to profile and score customers. RedCarpet lands to customers to finance their online purchases. As they have access to private and vulnerable data, they must protect their customers information. 
 
 The goal of the project is identifying fraud in the company's call center using a system that receives two audio call files and decides if the customer in the two calls is the same person.
 
@@ -29,7 +26,7 @@ The code in this repository is divided into modules, each responsible for a diff
 # Model
 
 
-This project is using an LSTM network for speaker identification with [Generalized End-to-End Loss for Speaker Verification](https://arxiv.org/abs/1710.10467). Model code is based on open source implementation of the speaker verification paper that can be found on GitHub [Speaker_Verification](https://github.com/Janghyun1230/Speaker_Verification)
+This project is using an LSTM neural network for speaker identification with [Generalized End-to-End Loss for Speaker Verification](https://arxiv.org/abs/1710.10467). Model code is based on open source implementation of the speaker verification paper that can be found on GitHub [Speaker_Verification](https://github.com/Janghyun1230/Speaker_Verification)
 
 
 # Data
@@ -46,8 +43,6 @@ NOTE: The input data expected to be a wav format mono, PCM signed sampled at 800
 
 # Dependencies
 
-
-
 *   python 3.5+
 *   numpy
 *   tensorflow
@@ -63,11 +58,13 @@ NOTE: The input data expected to be a wav format mono, PCM signed sampled at 800
 - To create embedding run the embeddings_db.c. The database can be created either by using separate speech utterances or extracted from phone calls according to config indication. source folder for datased for embeddings creation can be specified in the config file as well.
 - To re-train the model run the main function inside LSTM speaker identification module.
 
+
 # Results
 
+To get indicative results on a large dataset I’ve created synthetic dataset of a artificial call center calls with several operators and sufficient amount of customers. I did this by stitching random sentences of different speakers obtained from the CSTR VCTK Corpus dataset.
 
-The following confusion matrix was achieved on the synthetic data:
-
+The confusion matrix below was achieved on the synthetic data.
+The interesting metric is the recall that represents the amount of fraudulent calls I was able to detect. For the data below the recall is 93%
 
 <table>
   <tr>
@@ -87,9 +84,9 @@ SAME USER
 <p>
 NOT SAME USER
    </td>
-   <td><strong>TN:</strong> 389
+   <td><strong>TP:</strong> 716
    </td>
-   <td><strong>FP:</strong> 76
+   <td><strong>FN:</strong> 54
    </td>
   </tr>
   <tr>
@@ -97,11 +94,9 @@ NOT SAME USER
 <p>
 SAME USER
    </td>
-   <td><strong>FN:</strong> 5
+   <td><strong>FP:</strong> 45
    </td>
-   <td><strong>TP:</strong> 91
-   </td>
-  </tr>
-</table>
+   <td><strong>TN:</strong> 525
 
-
+### Recall: 93%
+### F1: 0.93 
