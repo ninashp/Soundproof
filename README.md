@@ -97,6 +97,7 @@ SAME USER
    <td><strong>FP:</strong> 45
    </td>
    <td><strong>TN:</strong> 525
+</table>
 
 ### Recall: 93%
 ### F1: 0.93 
