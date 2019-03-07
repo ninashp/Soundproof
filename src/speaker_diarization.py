@@ -8,7 +8,6 @@ from sklearn.cluster import KMeans
 from configuration import get_config
 import utils
 import signal_processing
-from signal_processing import SignalProcessing
 from VAD_segments import VAD_chunk
 import speaker_verification_lstm_model
 import scipy
@@ -29,7 +28,7 @@ def two_person_diarization(call_file):
     all_embeddings = []
     embedding_times = []
     for speech_seg, seg_time in zip(speech_segs, seg_times):
-        STFT_frames = SignalProcessing.split_segment_to_frames(speech_seg)
+        STFT_frames = signal_processing.split_segment_to_frames(speech_seg)
         if not STFT_frames:
             # not enough frames, continue to next segment
             continue

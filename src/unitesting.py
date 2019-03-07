@@ -3,7 +3,6 @@ This file contains unit testing for all the modules of the package
 """ 
 import os
 import signal_processing
-from signal_processing import SignalProcessing
 from configuration import get_config
 import speaker_diarization
 import datetime
@@ -31,9 +30,9 @@ def unitest_signal_processing__call_type():
 
     success_count = 0
     for single_call_file in os.listdir(config.calls_path):
-        call_type = SignalProcessing.identify_call_type(os.path.join(config.calls_path,single_call_file))
+        call_type = signal_processing.identify_call_type(os.path.join(config.calls_path,single_call_file))
         print("call path:"+single_call_file)
-        SignalProcessing.print_call_type(call_type)
+        signal_processing.print_call_type(call_type)
         if call_type == call_types_ground_truth[single_call_file]:
             print("PASS")
             success_count += 1

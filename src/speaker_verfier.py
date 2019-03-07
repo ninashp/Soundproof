@@ -8,7 +8,6 @@ import speaker_diarization
 from configuration import get_config
 import os
 import numpy as np
-from signal_processing import SignalProcessing
 import speaker_verification_lstm_model
 
 # get arguments from parser
@@ -20,11 +19,11 @@ def get_single_speaker_embeddings_from_call_center_call(call_file_path):
         Output: embeddings for the customer in the call
     """    
     # check if this call is starts with representative or customer
-    call_type = SignalProcessing.identify_call_type(call_file_path)    
+    call_type = signal_processing.identify_call_type(call_file_path)    
     # split the call into two callers
     _, embeddings_dict = speaker_diarization.two_person_diarization(call_file_path)
     # choose customer timestamps
-    if call_type == SignalProcessing.FIRST_SPEAKER_CUSTOMER:
+    if call_type == signal_processing.FIRST_SPEAKER_CUSTOMER:
         print(call_file_path,": FIRST_SPEAKER_CUSTOMER")
         embedding_per_call = embeddings_dict["FIRST SPEAKER"]
     else:

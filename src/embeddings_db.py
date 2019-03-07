@@ -8,7 +8,6 @@ import os
 import numpy as np
 import speaker_verification_lstm_model
 import signal_processing
-from signal_processing import SignalProcessing
 import librosa
 import speaker_verfier
 
@@ -30,7 +29,7 @@ def get_single_speaker_frames_from_utterances_path(utterances_folder):
             voice_utterances.append(utterance_audio)
 
     #extract spectrogram
-    spectrograms = SignalProcessing.extract_spectrograms_from_utterances(voice_utterances)
+    spectrograms = signal_processing.extract_spectrograms_from_utterances(voice_utterances)
     speaker_frames = []
     # for each spectrogram save only first and last frames
     for single_spect in spectrograms:

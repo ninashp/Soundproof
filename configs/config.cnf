@@ -11,7 +11,7 @@ mel_nof = 40
 hidden = 128
 proj = 64
 num_layer = 3
-model_path = ./LSTM speaker identification module/tisv_model_per_speaker
+model_path = ./LSTM speaker identification module/tisv_model
 model_num = 0
 
 [Testing Parameters]
